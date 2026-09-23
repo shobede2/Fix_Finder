@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
         btnNotification?.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SettingsFragment())
+                .replace(R.id.fragment_container, NotificationsFragment())
                 .addToBackStack(null)
                 .commit()
         }

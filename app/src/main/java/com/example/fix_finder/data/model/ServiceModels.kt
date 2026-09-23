@@ -95,3 +95,19 @@ data class UserSettings(
         const val THEME_DARK = "DARK"
     }
 }
+
+data class NotificationItem(
+    val id: String,
+    val title: String,
+    val message: String,
+    val timestamp: String,
+    var isRead: Boolean = false,
+    val type: String = TYPE_INFO
+) {
+    companion object {
+        const val TYPE_INFO = "INFO"
+        const val TYPE_BOOKING = "BOOKING"
+        const val TYPE_PROMO = "PROMO"
+        const val TYPE_SYSTEM = "SYSTEM"
+    }
+}

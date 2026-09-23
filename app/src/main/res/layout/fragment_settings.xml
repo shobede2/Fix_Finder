@@ -74,10 +74,10 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/imgProfileAvatar"
+                        android:id="@+id/imgSettingsAvatar"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_profile"
+                        android:src="@drawable/avatar_thabo"
                         android:layout_marginEnd="16dp" />
 
                     <LinearLayout
@@ -113,6 +113,18 @@
                             android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEditProfile"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:paddingHorizontal="10dp"
+                        android:text="Edit"
+                        android:textColor="@color/primary_navy"
+                        android:textSize="12sp"
+                        app:strokeColor="@color/primary_navy"
+                        app:cornerRadius="8dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.fix_finder.data.local.SessionManager
@@ -26,8 +27,17 @@ class DashboardFragment : Fragment() {
         sessionManager = SessionManager.getInstance(requireContext())
         val user = sessionManager.getUser()
         val tvTechGreeting = view.findViewById<TextView>(R.id.tvTechGreeting)
+        val btnNotification = view.findViewById<ImageView>(R.id.btnNotification)
+
         if (user != null) {
             tvTechGreeting?.text = "Good morning, ${user.name.substringBefore(" ")} 👋"
+        }
+
+        btnNotification?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, NotificationsFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
         val bottomNav = view.findViewById<BottomNavigationView>(R.id.bottomNavigation)

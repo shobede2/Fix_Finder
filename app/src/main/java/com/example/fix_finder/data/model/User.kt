@@ -7,6 +7,7 @@ data class User(
     val role: String = ROLE_CUSTOMER, // "customer" or "technician"
     val phone: String = "",
     val location: String = "Polokwane, Limpopo",
+    val avatarName: String = "avatar_thabo",
     val avatarUrl: String? = null
 ) {
     companion object {

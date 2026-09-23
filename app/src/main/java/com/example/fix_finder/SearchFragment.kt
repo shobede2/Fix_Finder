@@ -67,6 +67,7 @@ class SearchFragment : Fragment() {
         serviceRepository = ServiceRepository()
 
         val btnBack = view.findViewById<ImageView>(R.id.btnBack)
+        val btnNotification = view.findViewById<ImageView>(R.id.btnNotification)
         val etSearchQuery = view.findViewById<EditText>(R.id.etSearchQuery)
         val btnClearSearch = view.findViewById<ImageView>(R.id.btnClearSearch)
         val chipGroupCategories = view.findViewById<ChipGroup>(R.id.chipGroupCategories)
@@ -79,6 +80,13 @@ class SearchFragment : Fragment() {
 
         btnBack?.setOnClickListener {
             parentFragmentManager.popBackStack()
+        }
+
+        btnNotification?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, NotificationsFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
         btnClearSearch?.setOnClickListener {
